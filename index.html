@@ -10,14 +10,16 @@
 
     <!-- NAVIGATION BAR -->
     <nav class="navbar">
-        <div class="logo">UniBites</div>
+        <div class="logo" onclick="showHome()" style="cursor: pointer;">UniBites</div>
         <div class="nav-buttons">
-            <button class="login">Login</button>
-            <button class="signup">Sign Up</button>
+            <button class="login" onclick="showLogin()">Login</button>
+            <button class="signup" onclick="showRegister()">Sign Up</button>
         </div>
     </nav>
 
-    <!-- HERO IMAGE -->
+    <!-- MAIN CONTENT -->
+    <div id="main-content">
+        <!-- HERO IMAGE -->
     <section class="hero">
         <img src="panoramic_food.jpg" alt="Food image">
         <div class="hero-text">
@@ -92,6 +94,59 @@
         <button class="arrow right">❯</button>
     </div>
     </section>
+    </div>
+
+    <!-- LOGIN FORM (HIDDEN) -->
+    <div id="login-form" class="auth-modal" style="display: none;">
+        <div class="auth-form">
+            <div class="auth-close">
+                <button onclick="showHome()" class="close-btn">✕</button>
+            </div>
+            <h2>Login to UniBites</h2>
+            <form>
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <p class="form-footer">Don't have an account? <a href="#" onclick="showRegister(); return false;">Sign up here</a></p>
+        </div>
+    </div>
+
+    <!-- REGISTER FORM (HIDDEN) -->
+    <div id="register-form" class="auth-modal" style="display: none;">
+        <div class="auth-form">
+            <div class="auth-close">
+                <button onclick="showHome()" class="close-btn">✕</button>
+            </div>
+            <h2>Create Your UniBites Account</h2>
+            <form>
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm">Confirm Password</label>
+                    <input type="password" id="register-confirm" name="confirm-password" required>
+                </div>
+                <button type="submit" class="auth-button">Sign Up</button>
+            </form>
+            <p class="form-footer">Already have an account? <a href="#" onclick="showLogin(); return false;">Login here</a></p>
+        </div>
+    </div>
 
     <footer class="footer">
     <div class="footer-content">
@@ -112,6 +167,26 @@
         &copy; 2026 University of Patras. All rights reserved.
     </div>
     </footer>
+
+    <script>
+        function showHome() {
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'none';
+        }
+
+        function showLogin() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('login-form').style.display = 'flex';
+            document.getElementById('register-form').style.display = 'none';
+        }
+
+        function showRegister() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'flex';
+        }
+    </script>
 
 </body>
 </html>
