@@ -31,7 +31,7 @@ body.theme-dark {
     align-items: center;
     background-color: var(--text-dark);
     color: var(--primary);
-    padding: var(--space-md) var(--space-lg);
+    padding: 15px 30px;
 }
 
 .logo {
