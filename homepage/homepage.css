@@ -277,6 +277,16 @@ body.theme-dark .address-btn {
     font-weight: bold;
 }
 
+body.theme-dark .address-dropdown {
+    background-color: var(--bg-dark);
+    border-color: rgba(247,230,214,0.2);
+    color: var(--text-light);
+}
+
+body.theme-dark .address-dropdown li:hover {
+    background-color: var(--menu-bg-dark);
+}
+
 /* ------------------------------
    LAYOUT GRID
 ------------------------------ */
