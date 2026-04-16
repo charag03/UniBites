@@ -49,6 +49,10 @@ body.theme-dark .topbar {
     display: flex;
     align-items: center;
     gap: 12px;
+    & .icon-btn a{
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .logo {

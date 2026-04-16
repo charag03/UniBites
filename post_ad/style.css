@@ -8,19 +8,27 @@ body {
     padding: 0;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     background-color: #fff8e7;
+
+}
+
+a{
+    text-decoration: none;
 }
 
 .nav{
+    position: fixed;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.1rem solid black;
+    border-bottom: 0.1rem solid rgb(156, 134, 134);
     height: 4rem;
+    z-index: 10;
     background-color: #fff8e7;
-    border-radius: 0.5rem;
 }
-.logo,.curr-location,.Home{
+
+.logo,.curr-location{
     padding: 0.5rem;
 }
 
@@ -58,13 +66,70 @@ body {
 .control {
     display: flex;
     flex-direction: row;
-}
-.control span{
-    margin: 0.5rem;
-    padding: 0.5rem;
+    align-items: center;
+    padding-top: 1.5rem;
 }
 
-.control span:hover{
+.control > a{
+    margin: 0.5rem;
+    padding: 1rem;
+    border-style: none;
+    border-radius: 5rem 5rem;
+    background-color: #cc5500;
+    color: black;
+}
+
+.control .usr-menu{
+    margin: 0.5rem;
+    padding: 1rem;
+    border-style: none;
+    border-radius: 5rem 5rem;
+    background-color: #cc5500;
+    color: black;
+    & .list > span {
+      margin: 0.4rem;  
+    }
+}
+.usr-menu i:hover{
+        cursor: pointer;
+}
+
+.list{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 4rem;
+    right: 1rem;
+    background-color: bisque;
+    border-radius: 0.5rem ;
+    box-shadow: 0.1rem 0.3rem 0.8rem 0.2rem;
+    & span{
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        font-weight: bold;
+    }
+}
+
+.account-section, .menu-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.3rem;
+    & span{font-weight: lighter;}
+    & a{
+        padding: 0.6rem;
+        color: black;
+        background-color: transparent;
+        border-radius: 0.5rem;
+    }
+    & a:hover{background-color: grey;}
+}
+
+.control i{
+    font-size: 1rem;
+}
+
+.control button:hover{
     background-color: grey;
     cursor:pointer;
 }
@@ -72,8 +137,7 @@ body {
 .main {
     display: none;
     flex-direction: column;
-    border: 0.1rem solid black;
-    border-radius: 0.5rem 0.5rem ;
+    align-items: center;
 }
 
 
@@ -84,15 +148,30 @@ h1{
     padding-left: 1rem;
 }
 
-.description{
+.description, .image-inp{
     padding: 0.7rem;
-    border-bottom: 0.1rem solid black;
+    border: 0.1rem solid black;
     border-radius: 0.5rem 0.5rem;
+    width: 60%;
 }
 
 .container{
     width: 100%;
     padding: 1.5rem;
+}
+
+.prev-btn , .next-btn {
+    border: #cc5500;
+    border-radius: 4.5rem 4.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: chocolate;
+    font-size: medium;
+    color: #fff8e7;
+
+}
+.prev-btn:hover , .next-btn:hover{
+    background-color: rgb(120, 84, 37);
 }
 
 .container label{
@@ -110,8 +189,9 @@ h1{
 
 .portions{
     padding: 0.7rem;
-    border-bottom: 0.1rem solid black;
+    border: 0.1rem solid black;
     border-radius: 0.5rem 0.5rem;
+    width: 60%;
 }
 .portions input{
     border-radius: 0.5rem;
@@ -119,35 +199,30 @@ h1{
     padding: 0.3rem;
 }
 
+.main h1, .page-two h1{
+    margin:7rem ;
+}
 
-.tags{
+.tags{ 
     padding: 0.7rem;
-    border-bottom: 0.1rem solid black;
+    border: 0.1rem solid black;
     border-radius: 0.5rem 0.5rem;
+    width: 60%;
 }
 
 .tags label{
     cursor: pointer;
 }
 
-
-
-.tags:hover .items{
-    display: flex;
-}
-
 .alergies{
     padding: 0.7rem;
-    border-bottom: 0.1rem solid black;
+    border: 0.1rem solid black;
     border-radius: 0.5rem 0.5rem;
+    width: 60%;
 }
 
 .alergies label{
     cursor: pointer;
-}
-
-.alergies:hover .items{
-    display: flex;
 }
 
 .items {
@@ -204,28 +279,23 @@ h1{
      background-color: rgb(211, 211, 211);
 }
 
-/* ///////////////////////////// */
-/* display: none */
 .page-two {
     display: none;
     flex-direction: column;
-    border: 0.1rem solid black;
-    border-radius: 0.5rem 0.5rem ;
+    align-items: center;
 }
 
 .pickup-point{
     padding: 0.7rem;
-    border-bottom: 0.1rem solid black;
+    border: 0.1rem solid black;
     border-radius: 0.5rem 0.5rem;
+    width: 60%;
 }
 
 .pickup-point label{
     cursor: pointer;
 }
 
-.pickup-point:hover .items{
-    display: flex;
-}
 .pickup-point li button{
     padding: 1rem;
 }
@@ -234,8 +304,9 @@ h1{
 
 .timeslot{
     padding: 0.7rem;
-    border-bottom: 0.1rem solid black;
+    border: 0.1rem solid black;
     border-radius: 0.5rem 0.5rem;
+    width: 60%;
 }
 
 .timeslot label{
@@ -286,10 +357,9 @@ h1{
 
 .control .go-back{
     background: transparent;
-    /* border: 0.2rem solid rgb(0, 0, 0); */
     border-style: none;
-    border-radius: 0.5rem;
-    width: 20%;
+    border-radius: 2.5rem 2.5rem;
+    width: 10%;
 }
 
 .address-page button:hover{
@@ -347,3 +417,4 @@ h1{
 .confirm button:hover{
     background-color: rgb(211, 211, 211);      
 }
+

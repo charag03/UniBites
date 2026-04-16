@@ -1,7 +1,8 @@
-const next_arrow = document.querySelector(".next-page span:not(:first-Child)");
-const prev_arrow = document.querySelector(".next-page span:first-Child");
+const next_arrow = document.querySelector(".next-page .next-btn");
+const prev_arrow = document.querySelector(".next-page .prev-btn");
 const add_address = document.querySelector(".add-address");
-const go_back = document.querySelector(".address-page button");
+const go_back = document.querySelector(".address-page .go-back");
+const toggle_label = document.querySelectorAll(".toggle-label");
 const portion_element = document.querySelector(".portions .container input").addEventListener('keydown',(e)=>{
     //check for neg || fract
     if(e.key === "." || e.key === "-" || !/[1-9]/.test(e.key) && !(['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'].includes(e.key)))
@@ -41,4 +42,12 @@ go_back.addEventListener('click',()=>{
     document.querySelector(".page-two").classList.add("active");
     document.querySelector(".next-page").classList.add("active");
     document.querySelector(".address-page.active").classList.remove("active");
+    console.log("exit");
 });
+
+toggle_label.forEach((label)=>{
+    label.addEventListener("click",()=>{
+        label.nextElementSibling.classList.toggle("active");
+    });
+});
+

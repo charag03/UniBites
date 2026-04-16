@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <title>Document</title>
+    <title>Unibites | Post Ad</title>
 </head>
 <body>
 
@@ -23,18 +23,43 @@
         </div>
 
         <div class="control">
-            <span><i class="fa-solid fa-house"></i></span>
-            <span><i class="fa-solid fa-circle-user"></i></span>
+            <a href="../homepage/homepage.html"><i class="fa-solid fa-house"></i></a>
+
+            <div class="usr-menu">
+                <span><i class="fa-solid fa-circle-user"></i></span>
+                <div class="list">
+                    <span>User</span>
+                    <section class="account-section">
+                        <span>Credits : 40</span>
+                        <!-- reference to edit account -->
+                        <a href="">Edit Account</a>
+                    </section>
+                    <section class="menu-section">
+                        <!-- reference to deliveries -->
+                        <a href="">Deliveries</a>
+                        <!-- reference to meals -->
+                        <a href="">Meal Posts</a>
+                        <!-- reference to pending -->
+                        <a href="">Pending Requests</a>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
 
-    <h1>Welcome Back, User</h1>
-
     <div class="main active">
+        <h1>Welcome Back, User</h1>
         <section class="description">
             <div class="container">
                 <label for="description">Write your description : </label>
                 <textarea class="usr-input" name="" id="description" rows="6" placeholder="Write your description"></textarea>
+            </div>
+        </section>
+
+        <section class="image-inp">
+            <div class="container">
+                <label for="img-inp">Select image : </label>
+                <input type="file" id="img-inp" accept="image/png, image/jpeg">
             </div>
         </section>
 
@@ -47,7 +72,7 @@
 
         <section class="tags">
             <div class="container">
-                <label>Tags <i class="fa-solid fa-sort-down"></i></label>
+                <label class="toggle-label">Tags <i class="fa-solid fa-sort-down"></i></label>
 
                 <div class="items">
                     <ul>
@@ -86,10 +111,10 @@
 
         <section class="alergies">
             <div class="container">
-                <label>Alergies <i class="fa-solid fa-sort-down"></i></label>
+                <label class="toggle-label">Alergies <i class="fa-solid fa-sort-down"></i></label>
 
                 <div class="items">
-                    <!-- list created from js -->
+
                     <ul>
                         <li>
                             <label for="gluten">Gluten</label>
@@ -123,11 +148,11 @@
     </div>
 
     <div class="page-two">
+        <h1>Welcome Back, User</h1>
         <section class="pickup-point">
             <div class="container">
-                <label>Pickup-Points <i class="fa-solid fa-sort-down"></i></label>
+                <label class="toggle-label">Pickup-Points <i class="fa-solid fa-sort-down"></i></label>
                 <div class="items">
-                    <!-- list created from js -->
                     <ul>
                         <li>
                             <label for="address1">Agiou Nikolaou 71, Patras</label>
@@ -153,8 +178,8 @@
     </div>
 
     <div class="next-page active">
-            <span style="pointer-events: none;"><i class="fa-solid fa-caret-left"></i></span>
-            <span><i class="fa-solid fa-caret-right"></i></span>
+            <button class="prev-btn"><i class="fa-solid fa-caret-left"></i> Prev</button>
+            <button class="next-btn">Next <i class="fa-solid fa-caret-right"></i></button>
     </div>
 
     <div class="address-page">
@@ -175,12 +200,6 @@
         <div class="confirm">
             <button>Confirm</button>
         </div>
-    </div>
-
-
-    <div class="footer">
-
-
     </div>
 
     <script src="main.js"></script>
